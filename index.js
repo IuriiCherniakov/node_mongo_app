@@ -1,7 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const path = require('path')
 const exphbs = require('express-handlebars')
 const todoRouters = require('./routes/todos')
+
 
 const PORT = process.env.PORT || 3000
 
@@ -17,6 +19,7 @@ app.set('views','views')
 
 app.use(express.urlencoded({extended: true}))
 app.use(todoRouters)
+app.use(express.static())
 
 
 async function start() {
