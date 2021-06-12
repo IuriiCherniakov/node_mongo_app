@@ -19,7 +19,7 @@ app.set('views','views')
 
 app.use(express.urlencoded({extended: true}))
 app.use(todoRouters)
-app.use(express.static())
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 async function start() {
